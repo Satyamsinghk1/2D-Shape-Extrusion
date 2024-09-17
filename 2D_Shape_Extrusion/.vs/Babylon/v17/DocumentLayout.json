@@ -1,0 +1,86 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ss153542\\source\\repos\\2D Shape Extrusion and Manipulation\\2D_Shape_Extrusion\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F2B7145D-7DAA-499D-BA33-F5FA8D1A1BBD}|Babylon.csproj|c:\\users\\ss153542\\source\\repos\\2d shape extrusion and manipulation\\2d_shape_extrusion\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{F2B7145D-7DAA-499D-BA33-F5FA8D1A1BBD}|Babylon.csproj|solutionrelative:readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2B7145D-7DAA-499D-BA33-F5FA8D1A1BBD}|Babylon.csproj|c:\\users\\ss153542\\source\\repos\\2d shape extrusion and manipulation\\2d_shape_extrusion\\wwwroot\\app.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{F2B7145D-7DAA-499D-BA33-F5FA8D1A1BBD}|Babylon.csproj|solutionrelative:wwwroot\\app.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2B7145D-7DAA-499D-BA33-F5FA8D1A1BBD}|Babylon.csproj|c:\\users\\ss153542\\source\\repos\\2d shape extrusion and manipulation\\2d_shape_extrusion\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F2B7145D-7DAA-499D-BA33-F5FA8D1A1BBD}|Babylon.csproj|solutionrelative:wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2B7145D-7DAA-499D-BA33-F5FA8D1A1BBD}|Babylon.csproj|c:\\users\\ss153542\\source\\repos\\2d shape extrusion and manipulation\\2d_shape_extrusion\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2B7145D-7DAA-499D-BA33-F5FA8D1A1BBD}|Babylon.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "README.md",
+              "DocumentMoniker": "C:\\Users\\ss153542\\source\\repos\\2D Shape Extrusion and Manipulation\\2D_Shape_Extrusion\\README.md",
+              "RelativeDocumentMoniker": "README.md",
+              "ToolTip": "C:\\Users\\ss153542\\source\\repos\\2D Shape Extrusion and Manipulation\\2D_Shape_Extrusion\\README.md",
+              "RelativeToolTip": "README.md",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAAAAEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2024-09-17T13:09:43.087Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ss153542\\source\\repos\\2D Shape Extrusion and Manipulation\\2D_Shape_Extrusion\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\ss153542\\source\\repos\\2D Shape Extrusion and Manipulation\\2D_Shape_Extrusion\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T09:53:33.42Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "index.html",
+              "DocumentMoniker": "C:\\Users\\ss153542\\source\\repos\\2D Shape Extrusion and Manipulation\\2D_Shape_Extrusion\\wwwroot\\index.html",
+              "RelativeDocumentMoniker": "wwwroot\\index.html",
+              "ToolTip": "C:\\Users\\ss153542\\source\\repos\\2D Shape Extrusion and Manipulation\\2D_Shape_Extrusion\\wwwroot\\index.html",
+              "RelativeToolTip": "wwwroot\\index.html",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC8AAAALAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-09-12T10:27:30.577Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "app.js",
+              "DocumentMoniker": "C:\\Users\\ss153542\\source\\repos\\2D Shape Extrusion and Manipulation\\2D_Shape_Extrusion\\wwwroot\\app.js",
+              "RelativeDocumentMoniker": "wwwroot\\app.js",
+              "ToolTip": "C:\\Users\\ss153542\\source\\repos\\2D Shape Extrusion and Manipulation\\2D_Shape_Extrusion\\wwwroot\\app.js",
+              "RelativeToolTip": "wwwroot\\app.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAMIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-09-12T10:32:49.916Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

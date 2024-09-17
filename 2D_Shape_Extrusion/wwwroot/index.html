@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Drawing & 3D Extrusion</title>
+
+    <!-- CSS Styles for Buttons, Canvas, and Layout -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Button Styles */
+        button {
+            font-size: 12px;
+            padding: 4px 8px;
+            margin: 4px;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            background-color: #4CAF50; /* Default green */
+            color: white;
+        }
+
+        button:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+
+        /* Reset Button Specific Styles */
+        #resetButton {
+            background-color: #f44336; /* Red background */
+        }
+
+        #resetButton:hover {
+            background-color: #da190b; /* Darker red on hover */
+        }
+
+        /* Extrude Button Specific Styles */
+        #extrudeButton {
+            background-color: #2196F3; /* Blue background */
+        }
+
+        #extrudeButton:hover {
+            background-color: #0b7dda; /* Darker blue on hover */
+        }
+
+        /* Canvas Styling */
+        #drawCanvas2D {
+            border: 2px solid #ccc; /* Border around 2D canvas */
+        }
+
+        #renderCanvas3D {
+            border: 1px solid #ccc; /* Border around 3D canvas */
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Buttons for Drawing, Resetting, and Extruding -->
+    <button id="drawButton">Draw</button>
+    <button id="resetButton">Reset</button>
+    <button id="extrudeButton">Extrude</button>
+    <button id="moveButton">Move</button>
+    <!-- Canvas Elements -->
+    <canvas id="drawCanvas2D" width="500" height="500"></canvas>
+    <canvas id="renderCanvas3D"></canvas> <!-- 3D Rendering Canvas -->
+    <!-- Include Babylon.js for 3D rendering and Earcut.js for polygon support -->
+    <script src="https://cdn.jsdelivr.net/npm/babylonjs@5.0.0/babylon.max.js"></script>
+    <script src="https://cdn.babylonjs.com/earcut.min.js"></script>
+    <!-- Link to the external app.js script -->
+    <script src="app.js"></script>
+</body>
+
+</html>
