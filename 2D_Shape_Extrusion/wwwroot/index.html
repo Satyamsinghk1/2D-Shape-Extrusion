@@ -6,16 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Canvas Drawing & 3D Extrusion</title>
 
-    <!-- CSS Styles for Buttons, Canvas, and Layout -->
+    <!-- CSS for layout and buttons -->
     <style>
-        body {
+        body 
+        {
             font-family: Arial, sans-serif;
             text-align: center;
             padding: 20px;
         }
 
-        /* Button Styles */
-        button {
+        button 
+        {
             font-size: 12px;
             padding: 4px 8px;
             margin: 4px;
@@ -26,35 +27,39 @@
             color: white;
         }
 
-        button:hover {
+        button:hover 
+        {
             background-color: #45a049; /* Darker green on hover */
         }
 
-        /* Reset Button Specific Styles */
-        #resetButton {
-            background-color: #f44336; /* Red background */
+        #resetButton 
+        {
+            background-color: #f44336; /* Red */
         }
 
-        #resetButton:hover {
+        #resetButton:hover 
+        {
             background-color: #da190b; /* Darker red on hover */
         }
 
-        /* Extrude Button Specific Styles */
-        #extrudeButton {
-            background-color: #2196F3; /* Blue background */
+        #extrudeButton 
+        {
+            background-color: #2196F3; /* Blue */
         }
 
-        #extrudeButton:hover {
+        #extrudeButton:hover 
+        {
             background-color: #0b7dda; /* Darker blue on hover */
         }
 
-        /* Canvas Styling */
-        #drawCanvas2D {
-            border: 2px solid #ccc; /* Border around 2D canvas */
+        #drawCanvas2D 
+        {
+            border: 2px solid #ccc;
         }
 
-        #renderCanvas3D {
-            border: 1px solid #ccc; /* Border around 3D canvas */
+        #renderCanvas3D 
+        {
+            border: 1px solid #ccc;
             width: 500px;
             height: 500px;
         }
@@ -62,7 +67,7 @@
 </head>
 
 <body>
-    <!-- Buttons for Drawing, Resetting, and Extruding -->
+    <!-- Control buttons -->
     <button id="drawButton">Draw</button>
     <button id="resetButton">Reset</button>
     <button id="extrudeButton">Extrude</button>
@@ -72,13 +77,14 @@
     <button id="moveYPositive" style="display:none;">+Y</button>
     <button id="moveYNegative" style="display:none;">-Y</button>
 
-    <!-- Canvas Elements -->
+    <!-- Canvas elements for 2D drawing and 3D rendering -->
     <canvas id="drawCanvas2D" width="500" height="500"></canvas>
-    <canvas id="renderCanvas3D"></canvas> <!-- 3D Rendering Canvas -->
-    <!-- Include Babylon.js for 3D rendering and Earcut.js for polygon support -->
+    <canvas id="renderCanvas3D"></canvas> <!-- 3D rendering canvas -->
+    <!-- Include libraries for 3D rendering and polygon support -->
     <script src="https://cdn.jsdelivr.net/npm/babylonjs@5.0.0/babylon.max.js"></script>
     <script src="https://cdn.babylonjs.com/earcut.min.js"></script>
     <!-- Link to the external app.js script -->
+
     <script src="app.js"></script>
 </body>
 

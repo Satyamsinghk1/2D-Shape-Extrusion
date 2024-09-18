@@ -9,3 +9,4 @@ app.UseStaticFiles(); // Serve static files like JS, CSS, images, etc.
 
 // Run the app
 app.Run();
+

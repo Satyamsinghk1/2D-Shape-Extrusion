@@ -1,196 +1,220 @@
-﻿document.addEventListener("DOMContentLoaded", function () {
+﻿document.addEventListener("DOMContentLoaded", function ()
+{
+    // Access the 2D canvas and its context
     const canvas2D = document.getElementById("drawCanvas2D");
     const ctx = canvas2D.getContext("2d");
-    const points = []; // Array to store points
-    let drawingEnabled = false; // Flag to control drawing
-    let extrudedMesh = null;
 
-    // Translate the 2D context to make the origin (0, 0) the center of the canvas
+    // Array to store points of the 2D shape
+    const points = [];
+
+    // Flag to enable/disable drawing
+    let drawingEnabled = false; 
+
+    // Holds the 3D extruded mesh
+    let extrudedMesh = null; 
+
+    // Tracks visibility state of movement buttons
+    let moveButtonsVisible = false; 
+
+    // Adjust canvas context to center the origin and invert Y-axis for drawing
     ctx.translate(canvas2D.width / 2, canvas2D.height / 2);
-    // Invert the Y-axis so that positive Y goes upward
     ctx.scale(1, -1);
 
     // Event listener for left-click to add points
-    canvas2D.addEventListener("mousedown", function (e) {
-        if (drawingEnabled && e.button === 0) { // Left-click and drawing enabled
+    canvas2D.addEventListener("mousedown", function (e)
+    {
+        if (drawingEnabled && e.button === 0)
+        {
+            // Left-click and drawing enabled
             const rect = canvas2D.getBoundingClientRect();
-            const x = e.clientX - rect.left - canvas2D.width / 2;
-            const y = -(e.clientY - rect.top - canvas2D.height / 2); // Invert Y to match 3D
 
-            // Store the point
+            // Normalize X
+            const x = e.clientX - rect.left - canvas2D.width / 2;
+
+            // Normalize and Invert Y to match 3D canvas
+            const y = -(e.clientY - rect.top - canvas2D.height / 2); 
+
             points.push({ x, y });
 
             // Draw the point on the canvas
-            drawPoint(x, y);
+            drawPoint(x, y); 
         }
     });
 
     // Event listener for right-click to close the shape
-    canvas2D.addEventListener("contextmenu", function (e) {
-        e.preventDefault(); // Prevent context menu from appearing
+    canvas2D.addEventListener("contextmenu", function (e)
+    {
+        // Prevent default context menu
+        e.preventDefault(); 
 
-        if (points.length > 2) {
-            // Close the shape by connecting the last point to the first point
+        if (points.length > 2)
+        {
             ctx.beginPath();
             ctx.moveTo(points[0].x, points[0].y);
-            for (let i = 1; i < points.length; i++) {
-                ctx.lineTo(points[i].x, points[i].y);
-            }
-            ctx.closePath(); // Connect the last point to the first
-            ctx.stroke();
+
+            // Draw lines connecting each point in sequence
+            points.forEach(point => ctx.lineTo(point.x, point.y));
+
+            ctx.closePath();
+
+            // Draw the closed shape
+            ctx.stroke(); 
         }
     });
 
-    // Function to draw individual points
-    function drawPoint(x, y) {
+    // Function to draw individual points as circles
+    function drawPoint(x, y)
+    {
         ctx.fillStyle = "black";
         ctx.beginPath();
-        ctx.arc(x, y, 5, 0, Math.PI * 2); // Draw small circles as points
+
+        // Draw small circles representing the point
+        ctx.arc(x, y, 5, 0, Math.PI * 2); 
         ctx.fill();
     }
 
-    // Function to check if points are in clockwise or counterclockwise order
-    function isClockwise(points) {
-
+    // Function to check if points are in clockwise order
+    function isClockwise(points)
+    {
         let sum = 0;
-        for (let i = 0; i < points.length; i++) {
+        for (let i = 0; i < points.length; i++)
+        {
+
             const p1 = points[i];
             const p2 = points[(i + 1) % points.length];
             sum += (p2.x - p1.x) * (p2.y + p1.y);
         }
 
-        return sum > 0; // CW if the sum is positive
+        // Return true if sum is positive (clockwise)
+        return sum > 0; 
     }
 
-    // Reset button to clear the canvas
-    document.getElementById("resetButton").addEventListener("click", function () {
-        points.length = 0; // Clear stored points
-        ctx.clearRect(-canvas2D.width / 2, -canvas2D.height / 2, canvas2D.width,
-            canvas2D.height); // Clear the canvas
-        drawingEnabled = false; // Disable drawing after reset
+    // Function to show or hide movement buttons
+    function setMoveButtonsVisible(visible)
+    {
+        document.getElementById("moveXPositive").style.display = visible ? "inline" : "none";
+        document.getElementById("moveXNegative").style.display = visible ? "inline" : "none";
+        document.getElementById("moveYPositive").style.display = visible ? "inline" : "none";
+        document.getElementById("moveYNegative").style.display = visible ? "inline" : "none";
+        moveButtonsVisible = visible;
+    }
 
-        // Clear 3D canvas by disposing of the extruded mesh
+    // Reset button to clear the canvas and hide the 3D mesh and move buttons
+    document.getElementById("resetButton").addEventListener("click", function ()
+    {
+        // Clear stored points
+        points.length = 0; 
+
+        // Clear the canvas
+        ctx.clearRect(-canvas2D.width / 2, -canvas2D.height / 2, canvas2D.width, canvas2D.height); 
+
+        // Disable drawing
+        drawingEnabled = false; 
+
         if (extrudedMesh) {
-            extrudedMesh.dispose();
+
+            // Dispose of the 3D mesh
+            extrudedMesh.dispose(); 
             extrudedMesh = null;
+
         }
 
+        // Hide move buttons
+        setMoveButtonsVisible(false); 
     });
 
-    // Draw button to enable drawing
-    document.getElementById("drawButton").addEventListener("click", function () {
-        drawingEnabled = true; // Enable drawing when the Draw button is clicked
+    // Draw button to enable drawing mode
+    document.getElementById("drawButton").addEventListener("click", function ()
+    {
+        drawingEnabled = true;
     });
 
-    // Extrude button to create 3D shape
-    document.getElementById("extrudeButton").addEventListener("click", function () {
-        if (points.length > 2) {
+    // Extrude button to create 3D shape from 2D points
+    document.getElementById("extrudeButton").addEventListener("click", function ()
+    {
+        if (points.length > 2)
+        {
+            let shape = points.map(p =>
+            ({
+                x: p.x / (canvas2D.width / 2),
+                y: p.y / (canvas2D.height / 2)
+            }));
 
-            // Convert 2D points to a format Babylon.js can understand (2D to 3D)
-            let shape = points.map(p => {
-                // Already centered at (0,0) with inverted Y, just normalize for Babylon.js
-                const x = p.x / (canvas2D.width / 2);
-                const y = p.y / (canvas2D.height / 2);
-                return { x, y };
-            });
-
-            // Reverse the points if they are in clockwise order
-            if (isClockwise(shape)) {
-                shape.reverse();
+            if (isClockwise(shape))
+            {
+                // Reverse points if clockwise
+                shape.reverse(); 
             }
 
-            // Map to Babylon.Vector2
             shape = shape.map(p => new BABYLON.Vector2(p.x, p.y));
 
-            // Call the function to create a 3D mesh from the 2D points
-            extrudeShape(shape);
+            // Create 3D mesh
+            extrudeShape(shape); 
         }
     });
 
-    // Babylon.js initialization
+    // Initialize Babylon.js engine and scene
     const canvas3D = document.getElementById("renderCanvas3D");
     const engine = new BABYLON.Engine(canvas3D, true);
     const scene = new BABYLON.Scene(engine);
-    const camera = new BABYLON.ArcRotateCamera("camera", Math.PI / 2, Math.PI / 2, 10,
-
-        new BABYLON.Vector3(0, 0, 0), scene);
+    const camera = new BABYLON.ArcRotateCamera("camera", Math.PI / 2, Math.PI / 2, 10, new BABYLON.Vector3(0, 0, 0), scene);
     camera.attachControl(canvas3D, true);
-    const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0),
-        scene);
+    const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0), scene);
 
-    // Function to extrude the shape into 3D
-    function extrudeShape(shape) {
-        // Create a path for extrusion
+    // Function to extrude the 2D shape into a 3D mesh
+    function extrudeShape(shape)
+    {
         const path = [new BABYLON.Vector3(0, 0, 0), new BABYLON.Vector3(0, 0, 1)];
+        const polygonBuilder = new BABYLON.PolygonMeshBuilder("extrudedShape", shape, scene);
 
-        // Use PolygonMeshBuilder to create an extruded mesh
-        const polygonBuilder = new BABYLON.PolygonMeshBuilder("extrudedShape", shape,
-            scene);
-        extrudedMesh = polygonBuilder.build(false, 1); // 1 unit height extrusion
-        extrudedMesh.scaling.z = 3; // Scale the height to make extrusion more visible
+        // Create 3D mesh with 1 unit extrusion
+        extrudedMesh = polygonBuilder.build(false, 1); 
 
-        // Center the mesh
+        // Scale height for better visibility
+        extrudedMesh.scaling.z = 3; 
+
         extrudedMesh.position = new BABYLON.Vector3(0, 0, 0);
-
-        // Adjust camera position and target to fit the extruded shape
-        camera.position = new BABYLON.Vector3(0, 5, -10); // Adjust camera position for better view
+        camera.position = new BABYLON.Vector3(0, 5, -10);
         camera.setTarget(extrudedMesh.position);
-        camera.lowerRadiusLimit = 2; // Optional: prevent zooming too close
+        camera.lowerRadiusLimit = 2;
 
-        // Clear previous meshes if any
-        scene.meshes.forEach(mesh => {
-
-            if (mesh !== extrudedMesh) {
-                mesh.dispose();
+        scene.meshes.forEach(mesh =>
+        {
+            if (mesh !== extrudedMesh)
+            {
+                // Dispose previous meshes
+                mesh.dispose(); 
             }
         });
 
-        engine.runRenderLoop(function () {
-            scene.render();
-        });
+        // Render loop
+        engine.runRenderLoop(() => scene.render()); 
     }
 
-    // Resize the engine when the window is resized
-    window.addEventListener("resize", function () {
+    // Function to move the 3D mesh by a given offset
+    function moveExtrudedMesh(x, y)
+    {
+        if (extrudedMesh)
+        {
+            extrudedMesh.position.addInPlace(new BABYLON.Vector3(x, y, 0));
+        }
+    }
+
+    // Toggle visibility of movement buttons
+    document.getElementById("moveButton").addEventListener("click", function ()
+    {
+        setMoveButtonsVisible(!moveButtonsVisible);
+    });
+
+    // Movement button event listeners
+    document.getElementById("moveXPositive").addEventListener("click", () => moveExtrudedMesh(1, 0));
+    document.getElementById("moveXNegative").addEventListener("click", () => moveExtrudedMesh(-1, 0));
+    document.getElementById("moveYPositive").addEventListener("click", () => moveExtrudedMesh(0, 1));
+    document.getElementById("moveYNegative").addEventListener("click", () => moveExtrudedMesh(0, -1));
+
+    // Adjust canvas size on window resize
+    window.addEventListener("resize", function ()
+    {
         engine.resize();
     });
-
-    // Move object by a set amount
-    document.getElementById("moveButton").addEventListener("click", function () {
-        // Show the movement buttons
-        document.getElementById("moveXPositive").style.display = "inline";
-        document.getElementById("moveXNegative").style.display = "inline";
-        document.getElementById("moveYPositive").style.display = "inline";
-        document.getElementById("moveYNegative").style.display = "inline";
-    });
-
-    // Event listener for +X movement
-    document.getElementById("moveXPositive").addEventListener("click", function () {
-        if (extrudedMesh) {
-            extrudedMesh.position.addInPlace(new BABYLON.Vector3(1, 0, 0)); // Move +X
-        }
-    });
-
-    // Event listener for -X movement
-    document.getElementById("moveXNegative").addEventListener("click", function () {
-        if (extrudedMesh) {
-            extrudedMesh.position.addInPlace(new BABYLON.Vector3(-1, 0, 0)); // Move -X
-        }
-    });
-
-    // Event listener for +Y movement
-    document.getElementById("moveYPositive").addEventListener("click", function () {
-        if (extrudedMesh) {
-            extrudedMesh.position.addInPlace(new BABYLON.Vector3(0, 1, 0)); // Move +Y
-
-        }
-    });
-
-    // Event listener for -Y movement
-    document.getElementById("moveYNegative").addEventListener("click", function () {
-        if (extrudedMesh) {
-            extrudedMesh.position.addInPlace(new BABYLON.Vector3(0, -1, 0)); // Move -Y
-        }
-    });
-
 });
