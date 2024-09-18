@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "iooTIYW1x+aYhAchwyhn54wIfuBib4faECZ1Mre7LgI=",
+  "Hash": "re/2kQpbfr+TDHGiKUTF9Kj+OcOsiB30EylbidYud8o=",
   "Source": "Babylon",
   "BasePath": "_content/Babylon",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "Babylon\\wwwroot",
       "Source": "Babylon",
-      "ContentRoot": "C:\\Users\\ss153542\\source\\repos\\Babylon\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ss153542\\source\\repos\\2D Shape Extrusion and Manipulation\\2D_Shape_Extrusion\\wwwroot\\",
       "BasePath": "_content/Babylon",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\ss153542\\source\\repos\\Babylon\\wwwroot\\app.js",
+      "Identity": "C:\\Users\\ss153542\\source\\repos\\2D Shape Extrusion and Manipulation\\2D_Shape_Extrusion\\wwwroot\\app.js",
       "SourceId": "Babylon",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ss153542\\source\\repos\\Babylon\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ss153542\\source\\repos\\2D Shape Extrusion and Manipulation\\2D_Shape_Extrusion\\wwwroot\\",
       "BasePath": "_content/Babylon",
       "RelativePath": "app.js",
       "AssetKind": "All",
@@ -36,10 +36,10 @@
       "OriginalItemSpec": "wwwroot\\app.js"
     },
     {
-      "Identity": "C:\\Users\\ss153542\\source\\repos\\Babylon\\wwwroot\\index.html",
+      "Identity": "C:\\Users\\ss153542\\source\\repos\\2D Shape Extrusion and Manipulation\\2D_Shape_Extrusion\\wwwroot\\index.html",
       "SourceId": "Babylon",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ss153542\\source\\repos\\Babylon\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ss153542\\source\\repos\\2D Shape Extrusion and Manipulation\\2D_Shape_Extrusion\\wwwroot\\",
       "BasePath": "_content/Babylon",
       "RelativePath": "index.html",
       "AssetKind": "All",

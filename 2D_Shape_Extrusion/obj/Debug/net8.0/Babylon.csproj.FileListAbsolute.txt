@@ -24,3 +24,30 @@ C:\Users\ss153542\source\repos\Babylon\obj\Debug\net8.0\refint\Babylon.dll
 C:\Users\ss153542\source\repos\Babylon\obj\Debug\net8.0\Babylon.pdb
 C:\Users\ss153542\source\repos\Babylon\obj\Debug\net8.0\Babylon.genruntimeconfig.cache
 C:\Users\ss153542\source\repos\Babylon\obj\Debug\net8.0\ref\Babylon.dll
+C:\Users\ss153542\source\repos\2D Shape Extrusion and Manipulation\2D_Shape_Extrusion\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\ss153542\source\repos\2D Shape Extrusion and Manipulation\2D_Shape_Extrusion\bin\Debug\net8.0\appsettings.json
+C:\Users\ss153542\source\repos\2D Shape Extrusion and Manipulation\2D_Shape_Extrusion\bin\Debug\net8.0\Babylon.staticwebassets.runtime.json
+C:\Users\ss153542\source\repos\2D Shape Extrusion and Manipulation\2D_Shape_Extrusion\bin\Debug\net8.0\Babylon.exe
+C:\Users\ss153542\source\repos\2D Shape Extrusion and Manipulation\2D_Shape_Extrusion\bin\Debug\net8.0\Babylon.deps.json
+C:\Users\ss153542\source\repos\2D Shape Extrusion and Manipulation\2D_Shape_Extrusion\bin\Debug\net8.0\Babylon.runtimeconfig.json
+C:\Users\ss153542\source\repos\2D Shape Extrusion and Manipulation\2D_Shape_Extrusion\bin\Debug\net8.0\Babylon.dll
+C:\Users\ss153542\source\repos\2D Shape Extrusion and Manipulation\2D_Shape_Extrusion\bin\Debug\net8.0\Babylon.pdb
+C:\Users\ss153542\source\repos\2D Shape Extrusion and Manipulation\2D_Shape_Extrusion\obj\Debug\net8.0\Babylon.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ss153542\source\repos\2D Shape Extrusion and Manipulation\2D_Shape_Extrusion\obj\Debug\net8.0\Babylon.AssemblyInfoInputs.cache
+C:\Users\ss153542\source\repos\2D Shape Extrusion and Manipulation\2D_Shape_Extrusion\obj\Debug\net8.0\Babylon.AssemblyInfo.cs
+C:\Users\ss153542\source\repos\2D Shape Extrusion and Manipulation\2D_Shape_Extrusion\obj\Debug\net8.0\Babylon.csproj.CoreCompileInputs.cache
+C:\Users\ss153542\source\repos\2D Shape Extrusion and Manipulation\2D_Shape_Extrusion\obj\Debug\net8.0\Babylon.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\ss153542\source\repos\2D Shape Extrusion and Manipulation\2D_Shape_Extrusion\obj\Debug\net8.0\Babylon.sourcelink.json
+C:\Users\ss153542\source\repos\2D Shape Extrusion and Manipulation\2D_Shape_Extrusion\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\ss153542\source\repos\2D Shape Extrusion and Manipulation\2D_Shape_Extrusion\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\ss153542\source\repos\2D Shape Extrusion and Manipulation\2D_Shape_Extrusion\obj\Debug\net8.0\staticwebassets\msbuild.Babylon.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\ss153542\source\repos\2D Shape Extrusion and Manipulation\2D_Shape_Extrusion\obj\Debug\net8.0\staticwebassets\msbuild.build.Babylon.props
+C:\Users\ss153542\source\repos\2D Shape Extrusion and Manipulation\2D_Shape_Extrusion\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Babylon.props
+C:\Users\ss153542\source\repos\2D Shape Extrusion and Manipulation\2D_Shape_Extrusion\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Babylon.props
+C:\Users\ss153542\source\repos\2D Shape Extrusion and Manipulation\2D_Shape_Extrusion\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\ss153542\source\repos\2D Shape Extrusion and Manipulation\2D_Shape_Extrusion\obj\Debug\net8.0\scopedcss\bundle\Babylon.styles.css
+C:\Users\ss153542\source\repos\2D Shape Extrusion and Manipulation\2D_Shape_Extrusion\obj\Debug\net8.0\Babylon.dll
+C:\Users\ss153542\source\repos\2D Shape Extrusion and Manipulation\2D_Shape_Extrusion\obj\Debug\net8.0\refint\Babylon.dll
+C:\Users\ss153542\source\repos\2D Shape Extrusion and Manipulation\2D_Shape_Extrusion\obj\Debug\net8.0\Babylon.pdb
+C:\Users\ss153542\source\repos\2D Shape Extrusion and Manipulation\2D_Shape_Extrusion\obj\Debug\net8.0\Babylon.genruntimeconfig.cache
+C:\Users\ss153542\source\repos\2D Shape Extrusion and Manipulation\2D_Shape_Extrusion\obj\Debug\net8.0\ref\Babylon.dll
