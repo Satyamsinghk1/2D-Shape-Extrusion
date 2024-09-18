@@ -68,6 +68,13 @@
         ctx.clearRect(-canvas2D.width / 2, -canvas2D.height / 2, canvas2D.width,
             canvas2D.height); // Clear the canvas
         drawingEnabled = false; // Disable drawing after reset
+
+        // Clear 3D canvas by disposing of the extruded mesh
+        if (extrudedMesh) {
+            extrudedMesh.dispose();
+            extrudedMesh = null;
+        }
+
     });
 
     // Draw button to enable drawing
@@ -150,8 +157,40 @@
 
     // Move object by a set amount
     document.getElementById("moveButton").addEventListener("click", function () {
-        const moveAmount = 1; // Move by 1 unit per click
-        extrudedMesh.position.addInPlace(new BABYLON.Vector3(moveAmount, 0, 0)); //Move along X - axis
+        // Show the movement buttons
+        document.getElementById("moveXPositive").style.display = "inline";
+        document.getElementById("moveXNegative").style.display = "inline";
+        document.getElementById("moveYPositive").style.display = "inline";
+        document.getElementById("moveYNegative").style.display = "inline";
+    });
+
+    // Event listener for +X movement
+    document.getElementById("moveXPositive").addEventListener("click", function () {
+        if (extrudedMesh) {
+            extrudedMesh.position.addInPlace(new BABYLON.Vector3(1, 0, 0)); // Move +X
+        }
+    });
+
+    // Event listener for -X movement
+    document.getElementById("moveXNegative").addEventListener("click", function () {
+        if (extrudedMesh) {
+            extrudedMesh.position.addInPlace(new BABYLON.Vector3(-1, 0, 0)); // Move -X
+        }
+    });
+
+    // Event listener for +Y movement
+    document.getElementById("moveYPositive").addEventListener("click", function () {
+        if (extrudedMesh) {
+            extrudedMesh.position.addInPlace(new BABYLON.Vector3(0, 1, 0)); // Move +Y
+
+        }
+    });
+
+    // Event listener for -Y movement
+    document.getElementById("moveYNegative").addEventListener("click", function () {
+        if (extrudedMesh) {
+            extrudedMesh.position.addInPlace(new BABYLON.Vector3(0, -1, 0)); // Move -Y
+        }
     });
 
 });
